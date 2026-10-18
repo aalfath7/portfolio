@@ -53,32 +53,32 @@ section{padding:70px 0;border-top:1px solid var(--line)}
 .lab{color:var(--acc);display:block;margin-bottom:6px}
 h2{font-size:clamp(1.8rem,4.5vw,2.6rem);font-weight:600;line-height:1.1;margin:0 0 28px;letter-spacing:-.01em}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:0}
-.col{padding:0 28px}
+.col{padding:0 28px;min-width:0}
 .col:first-child{padding-left:0;border-right:1px solid var(--line)}
 .col:last-child{padding-right:0}
 .col h3{font-size:1.25rem;margin:0 0 8px}
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 0;padding:0;list-style:none}
 .chips li{font:.74rem var(--mono);border:1px solid var(--ink);border-radius:99px;padding:3px 11px}
-.proj{display:grid;grid-template-columns:70px 1fr auto;gap:18px;padding:26px 0;border-top:1px solid var(--line);transition:padding .25s}
-.proj:last-child{border-bottom:1px solid var(--line)}
-.proj:hover{padding-left:12px}
-.num{font:700 2.4rem/1 var(--mono);color:var(--acc)}
+.proj{position:relative;padding:26px 0 26px 84px;border-top:1px solid var(--line)}
+.proj:nth-of-type(4){border-bottom:1px solid var(--line)}
+.num{position:absolute;left:0;top:26px;font:700 2.4rem/1 var(--mono);color:var(--acc);transition:transform .2s}
+.proj:hover .num{transform:translateX(4px)}
 .proj h3{font-size:1.45rem;margin:0 0 6px;line-height:1.2}
 .proj p{margin:0 0 6px;color:var(--mut);font-size:1rem}
-.go{align-self:start;font:700 .78rem var(--mono);text-decoration:none;border-bottom:2px solid var(--acc);padding-bottom:2px;white-space:nowrap}
+.go{display:inline-block;margin-top:10px;font:700 .78rem var(--mono);text-decoration:none;border-bottom:2px solid var(--acc);padding-bottom:2px}
 .rows{list-style:none;margin:0;padding:0}
 .rows li{padding:14px 0;border-top:1px dashed var(--line)}
 .rows li:first-child{border-top:0;padding-top:0}
 .rows b{display:block;font-size:1.05rem}
 .rows span{color:var(--mut);font-size:.95rem;display:block}
 .rows .mono{color:var(--acc);font-size:.72rem}
-.stamp{display:inline-flex;gap:16px;align-items:center;margin-top:34px;padding:18px 24px;border:2px dashed var(--ink);background:var(--gold);color:#1a1a12;transform:rotate(-1.5deg);border-radius:6px}
-.stamp big{font-size:2.4rem;line-height:1}
-.stamp p{margin:0;line-height:1.35}
+.stamp{display:flex;width:fit-content;max-width:100%;gap:16px;align-items:center;margin-top:34px;padding:18px 24px;border:2px dashed var(--ink);background:var(--gold);color:#1a1a12;transform:rotate(-1.5deg);border-radius:6px}
+.stamp .tr{font-size:2.4rem;line-height:1;flex:none}
+.stamp p{margin:0;line-height:1.35;min-width:0}
 .big{font-size:clamp(2.2rem,8vw,5rem);font-weight:600;line-height:1;letter-spacing:-.02em;margin:0 0 26px}
 .big em{font-family:var(--emf);font-style:var(--emi);font-weight:400;color:var(--acc)}
 footer{padding:26px 0 40px;border-top:1px solid var(--line);color:var(--mut);font:.75rem var(--mono)}
-@media (max-width:780px){.hero .w{grid-template-columns:1fr}.frame{order:-1;margin:6px auto 10px}.two{grid-template-columns:1fr}.col,.col:first-child,.col:last-child{padding:0;border:0;margin-bottom:34px}.proj{grid-template-columns:48px 1fr}.go{grid-column:2}.num{font-size:1.7rem}nav .links a{display:none}}
+@media (max-width:780px){.hero .w{grid-template-columns:1fr}.frame{order:-1;margin:6px auto 10px}.two{grid-template-columns:1fr}.col,.col:first-child,.col:last-child{padding:0;border:0;margin-bottom:34px}.proj{padding-left:54px}.num{font-size:1.7rem}nav .links a{display:none}}
 </style>
 </head>
 <body>
@@ -117,7 +117,6 @@ footer{padding:26px 0 40px;border-top:1px solid var(--line);color:var(--mut);fon
     <h3>edutajwid.com</h3>
     <p>Website belajar tajwid interaktif untuk anak, remaja, dan dewasa. Ada registrasi dengan verifikasi email, materi, kuis, papan peringkat, kelas yang bisa dibuat dan diikuti, level, ujian kenaikan level dengan nilai, hingga sertifikat otomatis.</p>
     <ul class="chips"><li>Nuxt.js</li><li>Express.js</li><li>MySQL</li><li>Tailwind CSS</li></ul></div>
-    <!-- <a class="go" href="https://edutajwid.com" target="_blank" rel="noopener">Kunjungi ↗</a></article> -->
   <article class="proj"><div class="num">02</div><div>
     <h3>Quran Tracking App</h3>
     <p>Aplikasi web untuk memantau progres bacaan Al-Quran secara sistematis, baik untuk individu maupun lembaga seperti sekolah dan pesantren. Melacak ayat, surat, dan juz; progres tampil visual; input bisa harian atau berkala; nyaman di desktop dan ponsel.</p>
@@ -130,8 +129,7 @@ footer{padding:26px 0 40px;border-top:1px solid var(--line);color:var(--mut);fon
     <h3>Website Resmi Auladina Indonesia</h3>
     <p>Situs resmi sekolah tempat saya mengajar: profil dan visi-misi, program dan kurikulum, galeri kegiatan, berita, dan formulir pendaftaran online. Responsif dan dioptimalkan untuk pencarian.</p>
     <ul class="chips"><li>PHP</li><li>CodeIgniter</li><li>MySQL</li></ul></div>
-    <!-- <a class="go" href="https://auladinaindonesia.sch.id" target="_blank" rel="noopener">Kunjungi ↗</a></article> -->
-  <div class="stamp"><big>🏆</big><p><b>Juara III kategori Guru, tingkat nasional</b><br>Kompetisi pembuatan game berbasis AI, Clevio Innovator Camp 2026</p></div>
+  <div class="stamp"><span class="tr">🏆</span><p><b>Juara III kategori Guru, tingkat nasional</b><br>Kompetisi pembuatan game berbasis AI, Clevio Innovator Camp 2026</p></div>
 </div></section>
 
 <section id="jejak"><div class="w">
