@@ -268,6 +268,12 @@ const ID = {
   "filter.all": "Semua",
   "filter.system": "Sistem Web",
   "filter.edu": "EdTech",
+  "qa.tag": "Proyek Terbaru · Platform Belajar Al-Qur'an",
+  "qa.desc": "Aplikasi web untuk membaca, memahami, dan mengamalkan Al-Qur'an melalui langkah kecil yang istiqamah setiap hari.",
+  "qa.points":
+    "<li>Pembaca Al-Qur'an lengkap 114 surah dengan teks Arab, transliterasi Latin, terjemahan Indonesia, dan tafsir Kemenag RI.</li><li>Pembelajaran terstruktur dalam tiga jalur (Tilawah, Tajwid, dan Tahfidz), dengan materi seperti dasar-dasar tajwid dan lahn (kesalahan bacaan).</li><li>Pemantauan progres dengan target harian yang realistis untuk membangun kebiasaan yang konsisten.</li><li>Area admin untuk mengelola konten pembelajaran, di-deploy di Cloudflare Workers.</li>",
+  "qa.chips": "<span>Pembaca Qur'an</span><span>Tajwid</span><span>Tahfidz</span><span>Pemantauan Progres</span><span>Cloudflare Workers</span>",
+  "qa.link": "Kunjungi Situs",
   "p1.tag": "Website Sekolah &amp; CMS · Jul 2023 – Jun 2026",
   "p1.title": "Website &amp; Dashboard Admin Sekolah Auladina Indonesia",
   "p1.points":

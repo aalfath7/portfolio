@@ -1308,3 +1308,32 @@ mark {
     transform: none;
   }
 }
+
+/* ---------- featured project ---------- */
+.project-featured {
+  grid-column: 1 / -1;
+  background:
+    linear-gradient(135deg, rgba(201, 239, 82, 0.1), rgba(201, 239, 82, 0.02)),
+    var(--card);
+  border-color: var(--green-line);
+}
+
+.project-points {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.project-points li::marker {
+  color: var(--green);
+}
+
+.project-points li + li {
+  margin-top: 6px;
+}
+
+.project-link {
+  margin-top: 20px;
+  align-self: flex-start;
+}

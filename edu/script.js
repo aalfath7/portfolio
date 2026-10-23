@@ -293,6 +293,12 @@ const ID = {
   "filter.all": "Semua",
   "filter.edu": "Edukasi Islami",
   "filter.system": "Sistem Web",
+  "qa.tag": "Proyek Terbaru · Platform Belajar Al-Qur'an",
+  "qa.desc": "Aplikasi web untuk membaca, memahami, dan mengamalkan Al-Qur'an melalui langkah kecil yang istiqamah setiap hari.",
+  "qa.points":
+    "<li>Pembaca Al-Qur'an lengkap 114 surah dengan teks Arab, transliterasi Latin, terjemahan Indonesia, dan tafsir Kemenag RI.</li><li>Pembelajaran terstruktur dalam tiga jalur (Tilawah, Tajwid, dan Tahfidz), dengan materi seperti dasar-dasar tajwid dan lahn (kesalahan bacaan).</li><li>Pemantauan progres dengan target harian yang realistis untuk membangun kebiasaan yang konsisten.</li>",
+  "qa.chips": "<span>Pembaca Qur'an</span><span>Tajwid</span><span>Tahfidz</span><span>Pemantauan Progres</span>",
+  "qa.link": "Kunjungi Situs",
   "p1.title": "Website belajar tajwid interaktif",
   "p1.desc":
     "Platform belajar tajwid untuk anak, remaja, dan dewasa dengan fitur registrasi email, materi, kuis, papan peringkat, kelas, level, ujian, dan sertifikat otomatis.",
