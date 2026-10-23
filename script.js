@@ -3,8 +3,8 @@ const finePointer = window.matchMedia("(pointer: fine)").matches;
 
 /* ---------- typing effect ---------- */
 const ROLES = {
-  en: ["Educator", "Qur'an Practitioner", "Developer"],
-  id: ["Pendidik", "Praktisi Qur'an", "Pengembang"],
+  en: ["Full Stack Developer", "Laravel & Next.js", "EdTech Builder"],
+  id: ["Full Stack Developer", "Laravel & Next.js", "Pembangun EdTech"],
 };
 let roles = ROLES.en;
 const typedEl = document.getElementById("typed");
@@ -77,13 +77,14 @@ nav.addEventListener("click", (e) => {
 });
 
 /* ---------- reveal on scroll + counters ---------- */
-document.querySelectorAll(".stats, .timeline, .cred-list, .project-grid").forEach((group) => {
+document.querySelectorAll(".stats, .skills-grid, .timeline, .cred-list, .project-grid").forEach((group) => {
   group.querySelectorAll(".reveal").forEach((el, i) => el.style.setProperty("--delay", `${i * 0.08}s`));
 });
 
 function animateCount(el) {
   const target = parseFloat(el.dataset.count);
   const decimals = parseInt(el.dataset.decimals || "0", 10);
+  const prefix = el.dataset.prefix || "";
   const suffix = el.dataset.suffix || "";
   const duration = 1600;
   const start = performance.now();
@@ -91,7 +92,7 @@ function animateCount(el) {
   function frame(now) {
     const t = Math.min((now - start) / duration, 1);
     const eased = 1 - Math.pow(1 - t, 3);
-    el.textContent = (target * eased).toFixed(decimals) + suffix;
+    el.textContent = prefix + (target * eased).toFixed(decimals) + suffix;
     if (t < 1) requestAnimationFrame(frame);
   }
   requestAnimationFrame(frame);
@@ -163,33 +164,6 @@ if (finePointer && !reduceMotion) {
   });
 }
 
-/* ---------- awards tabs ---------- */
-const tabs = [...document.querySelectorAll(".tab")];
-const panels = document.querySelectorAll(".tab-panel");
-const indicator = document.querySelector(".tab-indicator");
-
-function moveIndicator(tab) {
-  indicator.style.width = `${tab.offsetWidth}px`;
-  indicator.style.height = `${tab.offsetHeight}px`;
-  indicator.style.transform = `translate(${tab.offsetLeft}px, ${tab.offsetTop - 6}px)`;
-}
-
-tabs.forEach((tab) => {
-  tab.addEventListener("click", () => {
-    tabs.forEach((t) => {
-      t.classList.toggle("active", t === tab);
-      t.setAttribute("aria-selected", t === tab);
-    });
-    panels.forEach((p) => p.classList.toggle("active", p.dataset.panel === tab.dataset.tab));
-    moveIndicator(tab);
-  });
-});
-
-const syncIndicator = () => moveIndicator(document.querySelector(".tab.active"));
-window.addEventListener("resize", syncIndicator);
-document.fonts ? document.fonts.ready.then(syncIndicator) : syncIndicator();
-syncIndicator();
-
 /* ---------- project filter ---------- */
 const filters = document.querySelectorAll(".filter");
 const projectCards = document.querySelectorAll(".project-card");
@@ -241,76 +215,86 @@ document.getElementById("year").textContent = new Date().getFullYear();
 /* ---------- language toggle (EN default, ID) ---------- */
 // English lives in the HTML; only Indonesian is listed here.
 const ID = {
-  "meta.title": "Farhan Abdillah Alfath | Portofolio",
-  "meta.desc": "Portofolio Farhan Abdillah Alfath, S.T. — Pengembang web, pendidik IT, dan pengajar Al-Qur'an.",
+  "meta.title": "Farhan Abdillah Alfath | Full Stack Developer",
+  "meta.desc": "Portofolio Farhan Abdillah Alfath, S.T. — Full Stack Developer (Laravel, Next.js, TypeScript) yang berfokus pada teknologi pendidikan.",
   "nav.about": "Tentang",
+  "nav.skills": "Keahlian",
   "nav.experience": "Pengalaman",
-  "nav.awards": "Penghargaan",
   "nav.projects": "Proyek",
+  "nav.education": "Pendidikan",
   "nav.contact": "Hubungi Saya",
-  "hero.eyebrow": "Tersedia untuk kolaborasi &amp; proyek baru",
+  "hero.eyebrow": "Terbuka untuk posisi Full Stack Developer",
   "hero.hello": "Halo, saya",
+  "hero.desc":
+    "Saya membangun sistem web produksi secara end to end, mulai dari desain database dan logika backend hingga frontend responsif dan deployment.",
   "hero.projects": "Lihat Proyek",
   "hero.scroll": "Gulir",
-  "badge.educator": "🧑‍🏫 Pendidik",
-  "badge.quran": "📖 Praktisi Qur'an",
-  "badge.dev": "💻 Pengembang",
-  "mq.frontend": "Pengembangan Frontend",
-  "mq.support": "Dukungan IT",
-  "mq.calligraphy": "Kaligrafi",
+  "badge.dev": "💻 Full Stack Developer",
+  "badge.edtech": "🏫 Pembangun EdTech",
+  "badge.award": "🏆 Penghargaan AI Nasional",
   "about.title": "Tentang Saya",
   "about.lead":
-    "Sarjana Teknik Informatika dari <mark>Universitas Lampung</mark> dengan IPK 3.8, pengembang aplikasi dan pengajar Al-Qur’an.",
+    "Full Stack Developer dan Sarjana Teknik Informatika dari <mark>Universitas Lampung</mark> (IPK 3.8), berfokus pada teknologi pendidikan.",
   "about.body":
-    "Memiliki pengalaman di bidang pengembangan web, dukungan teknologi informasi, pendidikan, dan pengajaran Al-Qur’an. Saya senang membangun produk digital yang membantu orang belajar dengan cara yang lebih efektif dan menyenangkan.",
+    "Selama 3+ tahun saya membangun dan memelihara sistem web produksi secara end to end. Saya membangun website resmi dan dashboard admin sekolah yang dipakai setiap hari oleh 15+ guru dan staf, dan tiga tahun mengajar IT memberi saya gambaran langsung tentang bagaimana sekolah benar-benar menggunakan sistemnya. Sebelumnya, saya mendapat pengalaman profesional sebagai frontend developer di Suitmedia, agensi digital di Jakarta.",
+  "about.body2":
+    "Saya terbiasa menjelaskan pekerjaan teknis dengan jelas kepada pengguna non-teknis, dan peduli pada perangkat lunak yang andal, mudah dijalankan, dan nyaman digunakan.",
   "stat.gpa": "IPK Teknik Informatika",
-  "stat.quran": "Hafalan Al-Qur'an",
-  "stat.roles": "Peran Profesional",
-  "stat.awards": "Penghargaan",
-  "exp.title": "Pengalaman &amp; Pendidikan",
-  "exp.work": "💼 Pengalaman Profesional",
-  "exp.edu": "🎓 Pendidikan &amp; Kredensial",
-  "role.support": "Teknisi Dukungan Teknologi Informasi",
-  "org.axiom": "Lepas (Freelance), Axiom Technologies",
+  "stat.years": "Tahun Membangun Sistem Web",
+  "stat.users": "Staf Memakai Dashboard Saya Tiap Hari",
+  "stat.award": "Lomba Cipta Game AI Nasional",
+  "skills.title": "Teknologi &amp; Keahlian",
+  "skills.lang": "⌨️ Bahasa Pemrograman",
+  "skills.rbac": "Akses berbasis peran",
+  "skills.db": "🗄️ Database",
+  "skills.tools": "🛠️ Perkakas",
+  "skills.git": "Git (branching, PR, code review)",
+  "skills.spoken": "🌐 Bahasa",
+  "skills.spokenChips": "<span>Indonesia (bahasa ibu)</span><span>Inggris (profesional)</span>",
+  "exp.title": "Pengalaman Kerja",
+  "role.support": "IT Support Engineer (Lepas)",
   "role.itTeacher": "Guru TIK",
-  "role.quranPractitioner": "Praktisi Pengajar Qur’an",
-  "role.quranTeacher": "Pengajar Al-Qur’an",
-  "role.frontend": "Pengembang Frontend",
-  "cred.degree": "Sarjana Teknik Informatika (S.T.)",
-  "cred.degreeSub": "Universitas Lampung · IPK 3.8",
-  "cred.hafiz": "Hafaz Al-Qur'an 30 Juz",
-  "cred.darulHuffaz": "Lulusan Darul Huffaz Lampung",
-  "cred.almahir": "Lulusan Karantina Tahfidz Al-Mahir Bil Qur’an Indonesia",
-  "awards.title": "Penghargaan &amp; Prestasi",
-  "tab.tech": "💡 Teknologi &amp; Pendidikan",
-  "tab.tahfidz": "📖 Tahfidz Al-Qur'an",
-  "tab.calligraphy": "🖋️ Seni Kaligrafi",
-  "award.game": "Lomba Cipta Game Nasional Powered by AI — Kategori Guru",
-  "award.rohis": "Kaligrafi Ikhwan ROHIS Lampung Gema Islam",
-  "award.pesantren": "Kaligrafi Kontemporer Festival Pesantren V Se-Lampung",
-  "award.teknokrat": "Kaligrafi Pentas Islami Teknokrat Se-Lampung",
+  "role.frontend": "Frontend Developer",
+  "date.support": "Jun 2026 – Sekarang",
+  "date.teacher": "Jul 2023 – Jun 2026",
+  "date.frontend": "Feb 2023 – Jun 2023",
+  "pts.support":
+    "<li>Menangani masalah perangkat keras, perangkat lunak, dan jaringan untuk pengguna.</li><li>Mendokumentasikan solusi masalah berulang dalam referensi troubleshooting bersama.</li>",
+  "pts.teacher":
+    "<li>Membangun dan memelihara website resmi serta dashboard admin sekolah yang dipakai 15+ guru dan staf (lihat Proyek).</li><li>Mengelola infrastruktur digital sekolah dan memberikan dukungan teknis kepada guru dan staf.</li><li>Mengajar Teknologi Informasi dan Ilmu Komputer kepada 50+ siswa SMP.</li>",
+  "pts.frontend":
+    "<li>Membangun 10+ halaman e-commerce responsif yang tampil konsisten di desktop dan mobile.</li><li>Mengintegrasikan 5+ endpoint REST API untuk menampilkan data produk, pengguna, dan transaksi secara dinamis.</li><li>Bekerja dalam tim lintas fungsi dengan alur kerja Git: feature branch, pull request, code review, dan merge.</li>",
   "projects.title": "Proyek Unggulan",
   "filter.all": "Semua",
-  "filter.edu": "Edukasi Islami",
   "filter.system": "Sistem Web",
-  "p1.title": "Website belajar tajwid interaktif",
-  "p1.desc":
-    "Platform belajar tajwid untuk anak, remaja, dan dewasa dengan fitur registrasi email, materi, kuis, papan peringkat, kelas, level, ujian, dan sertifikat otomatis.",
-  "p1.chips": "<span>Kuis</span><span>Papan Peringkat</span><span>Sertifikat</span>",
-  "p2.tag": "Aplikasi Pantau Qur'an",
-  "p2.title": "Monitoring progres membaca Al-Qur'an",
-  "p2.desc":
+  "filter.edu": "EdTech",
+  "p1.tag": "Website Sekolah &amp; CMS · Jul 2023 – Jun 2026",
+  "p1.title": "Website &amp; Dashboard Admin Sekolah Auladina Indonesia",
+  "p1.points":
+    "<li>Membangun website resmi sekolah secara end to end, dari database MySQL dan backend CodeIgniter hingga frontend responsif dan SEO-friendly dengan Tailwind CSS.</li><li>Menyediakan halaman publik untuk profil sekolah, berita, galeri, dan informasi PPDB bagi orang tua dan calon siswa.</li><li>Mengembangkan dashboard admin (CMS) yang dipakai 15+ guru dan staf untuk memublikasikan konten dan mengelola data sekolah secara real time.</li><li>Men-deploy situs ke produksi, merilis peningkatan berkelanjutan, dan melatih staf agar dapat mengelola dashboard secara mandiri.</li>",
+  "p2.tag": "Manajemen Gudang",
+  "p2.title": "Sistem manajemen inventaris",
+  "p2.desc": "Aplikasi full-stack untuk inventaris, purchase order, dan validasi stok otomatis.",
+  "p3.title": "Website belajar tajwid interaktif",
+  "p3.desc":
+    "Platform belajar untuk anak, remaja, dan dewasa dengan fitur registrasi email, materi, kuis, papan peringkat, kelas, level, ujian, dan sertifikat otomatis.",
+  "p3.chips": "<span>Autentikasi</span><span>Kuis</span><span>Papan Peringkat</span><span>Sertifikat</span>",
+  "p4.tag": "Aplikasi Pemantauan Progres",
+  "p4.title": "Monitoring progres membaca Al-Qur'an",
+  "p4.desc":
     "Aplikasi web yang memantau progres bacaan untuk individu maupun lembaga, dengan visualisasi data dan input harian atau berkala.",
-  "p2.chips": "<span>Visualisasi Data</span><span>Banyak Pengguna</span><span>Pemantauan</span>",
-  "p3.tag": "Manajemen Gudang",
-  "p3.title": "Sistem manajemen inventaris",
-  "p3.desc": "Aplikasi full-stack untuk inventaris, purchase order, dan validasi stok otomatis.",
-  "p4.tag": "Website Sekolah",
-  "p4.title": "Website Sekolah Auladina Indonesia",
-  "p4.desc": "Website resmi sekolah dengan dashboard admin untuk pengelolaan data guru dan staf.",
-  "contact.eyebrow": "Mari berkolaborasi",
-  "contact.title": 'Punya ide proyek<br /><span class="accent">atau kelas Qur\'an?</span>',
-  "contact.sub": "Saya terbuka untuk proyek web, pengajaran IT, maupun program tahsin &amp; tahfidz.",
+  "p4.chips": "<span>Visualisasi Data</span><span>Banyak Pengguna</span><span>Pemantauan</span>",
+  "edu.title": "Pendidikan &amp; Penghargaan",
+  "edu.edu": "🎓 Pendidikan",
+  "edu.awards": "🏆 Penghargaan",
+  "cred.degree": "Sarjana Teknik Informatika (S.T.)",
+  "cred.degreeSub": "Universitas Lampung · IPK 3.8/4.0 · Agu 2020 – Nov 2024",
+  "cred.dicodingSub": "Dicoding Academy · Kampus Merdeka MSIB · Agu 2022 – Jan 2023",
+  "award.game": "Lomba Cipta Game Nasional Powered by AI — Kategori Guru",
+  "contact.eyebrow": "Mari bekerja sama",
+  "contact.title": 'Mencari developer<br /><span class="accent">atau punya proyek?</span>',
+  "contact.sub":
+    "Saya terbuka untuk posisi full stack dan frontend, proyek web lepas, maupun pekerjaan teknologi pendidikan. Berdomisili di Lampung, Indonesia.",
   "contact.copy": "Salin Email",
   "aria.menu": "Buka menu",
   "aria.scroll": "Gulir ke bawah",
@@ -344,7 +328,6 @@ function applyLang(lang) {
 
   roles = ROLES[lang];
   resetTyping();
-  syncIndicator();
   try {
     localStorage.setItem("lang", lang);
   } catch {}

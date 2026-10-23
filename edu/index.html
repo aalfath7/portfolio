@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farhan Abdillah Alfath | Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio of Farhan Abdillah Alfath, S.T. — Web developer, IT educator, and Qur'an teacher."
+    />
+    <link rel="icon" type="image/svg+xml" href="../logo.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
+    <div class="bg-grid" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a href="#home" class="brand">
+        <img class="brand-mark" src="../logo.svg" alt="" width="48" height="48" />
+        <span>Farhan</span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#experience" data-i18n="nav.experience">Experience</a>
+        <a href="#awards" data-i18n="nav.awards">Awards</a>
+        <a href="#projects" data-i18n="nav.projects">Projects</a>
+        <a href="#contact" class="nav-cta" data-i18n="nav.contact"
+          >Contact Me</a
+        >
+      </nav>
+      <button
+        class="lang-toggle"
+        id="langToggle"
+        type="button"
+        aria-label="Switch language"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          width="16"
+          height="16"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          aria-hidden="true"
+        >
+          <circle cx="12" cy="12" r="9.5" />
+          <path
+            d="M2.5 12h19M12 2.5c2.6 2.8 3.9 6 3.9 9.5s-1.3 6.7-3.9 9.5c-2.6-2.8-3.9-6-3.9-9.5s1.3-6.7 3.9-9.5z"
+          />
+        </svg>
+        <span class="lang-opt" data-lang="en">EN</span>
+        <span class="lang-opt" data-lang="id">ID</span>
+      </button>
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open menu"
+        data-i18n-aria="aria.menu"
+        aria-expanded="false"
+      >
+        <span></span><span></span>
+      </button>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero" id="home">
+        <div class="hero-copy">
+          <p class="eyebrow reveal">
+            <span class="dot"></span>
+            <span data-i18n="hero.eyebrow"
+              >Open to collaborations &amp; new projects</span
+            >
+          </p>
+          <h1 class="hero-title">
+            <span class="line"
+              ><span data-i18n="hero.hello">Hi, I'm</span></span
+            >
+            <span class="line accent"
+              ><span>Farhan<i class="blink">.</i></span></span
+            >
+          </h1>
+          <p class="hero-sub reveal">
+            <span class="typed" id="typed"></span><span class="caret">|</span>
+          </p>
+          <div class="hero-actions reveal">
+            <a href="#projects" class="btn btn-primary magnetic">
+              <span data-i18n="hero.projects">View Projects</span>
+              <span class="btn-icon">→</span>
+            </a>
+            <a
+              href="#contact"
+              class="btn btn-ghost magnetic"
+              data-i18n="nav.contact"
+              >Contact Me</a
+            >
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="photo-wrap tilt">
+            <div class="photo-ring"></div>
+            <img src="../foto.webp" alt="Farhan Abdillah Alfath" />
+            <div class="float-badge badge-1" data-i18n="badge.educator">
+              🧑‍🏫 Educator
+            </div>
+            <div class="float-badge badge-2" data-i18n="badge.quran">
+              📖 Qur'an Practitioner
+            </div>
+            <div class="float-badge badge-3" data-i18n="badge.dev">
+              💻 Developer
+            </div>
+          </div>
+        </div>
+
+        <a
+          href="#about"
+          class="scroll-hint"
+          aria-label="Scroll down"
+          data-i18n-aria="aria.scroll"
+        >
+          <span class="mouse"><span class="wheel"></span></span>
+          <span data-i18n="hero.scroll">Scroll</span>
+        </a>
+      </section>
+
+      <!-- MARQUEE -->
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span data-i18n="mq.frontend">Frontend Development</span><b>✦</b>
+          <span>Laravel</span><b>✦</b> <span>Next.js</span><b>✦</b>
+          <span>TypeScript</span><b>✦</b> <span>Tailwind CSS</span><b>✦</b>
+          <span data-i18n="mq.support">IT Support</span><b>✦</b>
+          <span>Tahsin &amp; Tahfidz</span><b>✦</b>
+          <span data-i18n="mq.calligraphy">Calligraphy</span><b>✦</b>
+          <span data-i18n="mq.frontend">Frontend Development</span><b>✦</b>
+          <span>Laravel</span><b>✦</b> <span>Next.js</span><b>✦</b>
+          <span>TypeScript</span><b>✦</b> <span>Tailwind CSS</span><b>✦</b>
+          <span data-i18n="mq.support">IT Support</span><b>✦</b>
+          <span>Tahsin &amp; Tahfidz</span><b>✦</b>
+          <span data-i18n="mq.calligraphy">Calligraphy</span><b>✦</b>
+        </div>
+      </div>
+
+      <!-- ABOUT -->
+      <section class="section" id="about">
+        <div class="section-head reveal">
+          <span class="section-num">01</span>
+          <h2 data-i18n="about.title">About Me</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p class="lead" data-i18n="about.lead">
+              Informatics Engineering graduate from
+              <mark>Universitas Lampung</mark> with a 3.8 GPA, app developer and
+              Qur'an teacher.
+            </p>
+            <p data-i18n="about.body">
+              Experienced in web development, IT support, education, and Qur'an
+              teaching. I love building digital products that help people learn
+              in more effective and enjoyable ways.
+            </p>
+          </div>
+          <div class="stats">
+            <div class="stat reveal">
+              <span class="stat-num" data-count="3.8" data-decimals="1">0</span>
+              <span class="stat-label" data-i18n="stat.gpa"
+                >Informatics GPA</span
+              >
+            </div>
+            <div class="stat reveal">
+              <span class="stat-num" data-count="30" data-suffix=" Juz">0</span>
+              <span class="stat-label" data-i18n="stat.quran"
+                >Qur'an Memorized</span
+              >
+            </div>
+            <div class="stat reveal">
+              <span class="stat-num" data-count="6" data-suffix="+">0</span>
+              <span class="stat-label" data-i18n="stat.roles"
+                >Professional Roles</span
+              >
+            </div>
+            <div class="stat reveal">
+              <span class="stat-num" data-count="9">0</span>
+              <span class="stat-label" data-i18n="stat.awards">Awards</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section class="section" id="experience">
+        <div class="section-head reveal">
+          <span class="section-num">02</span>
+          <h2 data-i18n="exp.title">Experience &amp; Education</h2>
+        </div>
+
+        <div class="exp-grid">
+          <div>
+            <h3 class="col-title reveal" data-i18n="exp.work">
+              💼 Professional Experience
+            </h3>
+            <ol class="timeline">
+              <li class="reveal">
+                <span class="tl-role" data-i18n="role.support"
+                  >Information Technology Support Engineer</span
+                >
+                <span class="tl-org" data-i18n="org.axiom"
+                  >Freelance, Axiom Technologies</span
+                >
+              </li>
+              <li class="reveal">
+                <span class="tl-role" data-i18n="role.itTeacher"
+                  >IT Teacher</span
+                >
+                <span class="tl-org">SMP IT Auladina Indonesia</span>
+              </li>
+              <li class="reveal">
+                <span class="tl-role" data-i18n="role.quranTeacher"
+                  >Qur'an Teacher</span
+                >
+                <span class="tl-org">SMP IT Auladina Indonesia</span>
+              </li>
+              <li class="reveal">
+                <span class="tl-role" data-i18n="role.quranTeacher"
+                  >Qur'an Teacher</span
+                >
+                <span class="tl-org">Ashabul Qur’an Lampung</span>
+              </li>
+              <li class="reveal">
+                <span class="tl-role" data-i18n="role.frontend"
+                  >Frontend Developer</span
+                >
+                <span class="tl-org">PT. Suitmedia Kreasi Indonesia</span>
+              </li>
+            </ol>
+          </div>
+
+          <div>
+            <h3 class="col-title reveal" data-i18n="exp.edu">
+              🎓 Education &amp; Credentials
+            </h3>
+            <div class="cred-list">
+              <div class="cred cred-main reveal">
+                <span class="cred-title" data-i18n="cred.degree"
+                  >Bachelor of Informatics Engineering (S.T.)</span
+                >
+                <span class="cred-sub" data-i18n="cred.degreeSub"
+                  >Universitas Lampung · GPA 3.8</span
+                >
+              </div>
+              <div class="cred reveal">
+                <span class="cred-title"
+                  >Frontend & Backend Developer Program</span
+                >
+                <span class="cred-sub">Dicoding Academy</span>
+              </div>
+              <div class="cred reveal">
+                <span class="cred-title" data-i18n="cred.hafiz"
+                  >Memorized the entire Qur'an (30 Juz)</span
+                >
+              </div>
+              <div class="cred reveal">
+                <span class="cred-title" data-i18n="cred.darulHuffaz"
+                  >Graduate of Darul Huffaz Lampung</span
+                >
+              </div>
+              <div class="cred reveal">
+                <span class="cred-title" data-i18n="cred.almahir"
+                  >Graduate of Karantina Tahfidz Al-Mahir Bil Qur’an
+                  Indonesia</span
+                >
+              </div>
+              <div class="cred reveal">
+                <span class="cred-title">Majelis Tahsin Bersanad</span>
+                <span class="cred-sub">Indonesia Al-Qur’an Center</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- AWARDS -->
+      <section class="section" id="awards">
+        <div class="section-head reveal">
+          <span class="section-num">03</span>
+          <h2 data-i18n="awards.title">Awards &amp; Achievements</h2>
+        </div>
+
+        <div class="tabs reveal" role="tablist">
+          <button
+            class="tab active"
+            role="tab"
+            aria-selected="true"
+            data-tab="tech"
+            data-i18n="tab.tech"
+          >
+            💡 Technology &amp; Education
+          </button>
+          <button
+            class="tab"
+            role="tab"
+            aria-selected="false"
+            data-tab="tahfidz"
+            data-i18n="tab.tahfidz"
+          >
+            📖 Qur'an Memorization
+          </button>
+          <button
+            class="tab"
+            role="tab"
+            aria-selected="false"
+            data-tab="kaligrafi"
+            data-i18n="tab.calligraphy"
+          >
+            🖋️ Islamic Calligraphy
+          </button>
+          <span class="tab-indicator"></span>
+        </div>
+
+        <div class="tab-panels">
+          <div class="tab-panel active" data-panel="tech">
+            <div class="award">
+              <span class="award-rank r3">3</span>
+              <div>
+                <p class="award-title" data-i18n="award.game">
+                  National AI-Powered Game Creation Competition — Teacher
+                  Category
+                </p>
+                <p class="award-meta">Clevio Innovator Camp · 2026</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-panel" data-panel="tahfidz">
+            <div class="award">
+              <span class="award-rank r1">1</span>
+              <div>
+                <p class="award-title">MHQ 5 Juz</p>
+                <p class="award-meta">MTQ-M Unila · 2021</p>
+              </div>
+            </div>
+            <div class="award">
+              <span class="award-rank r3">3</span>
+              <div>
+                <p class="award-title">MHQ 20 Juz</p>
+                <p class="award-meta">MTQ Kota Bandar Lampung · 2019</p>
+              </div>
+            </div>
+            <div class="award">
+              <span class="award-rank r3">3</span>
+              <div>
+                <p class="award-title">MHQ 10 Juz</p>
+                <p class="award-meta">MTQ Lampung Selatan · 2018</p>
+              </div>
+            </div>
+            <div class="award">
+              <span class="award-rank r2">2</span>
+              <div>
+                <p class="award-title">MHQ 10 Juz</p>
+                <p class="award-meta">MTQ Lampung Selatan · 2017</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-panel" data-panel="kaligrafi">
+            <div class="award">
+              <span class="award-rank r1">1</span>
+              <div>
+                <p class="award-title" data-i18n="award.rohis">
+                  Men's Calligraphy — ROHIS Lampung Gema Islam
+                </p>
+                <p class="award-meta">SMAN 3 Metro · 2019</p>
+              </div>
+            </div>
+            <div class="award">
+              <span class="award-rank r3">3</span>
+              <div>
+                <p class="award-title" data-i18n="award.pesantren">
+                  Contemporary Calligraphy — Festival Pesantren V, Lampung
+                  Province
+                </p>
+                <p class="award-meta">2018</p>
+              </div>
+            </div>
+            <div class="award">
+              <span class="award-rank r3">3</span>
+              <div>
+                <p class="award-title" data-i18n="award.teknokrat">
+                  Calligraphy — Pentas Islami Teknokrat, Lampung Province
+                </p>
+                <p class="award-meta">2018</p>
+              </div>
+            </div>
+            <div class="award">
+              <span class="award-rank r1">1</span>
+              <div>
+                <p class="award-title" data-i18n="award.teknokrat">
+                  Calligraphy — Pentas Islami Teknokrat, Lampung Province
+                </p>
+                <p class="award-meta">2017</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="section" id="projects">
+        <div class="section-head reveal">
+          <span class="section-num">04</span>
+          <h2 data-i18n="projects.title">Featured Projects</h2>
+        </div>
+
+        <div class="filters reveal">
+          <button
+            class="filter active"
+            data-filter="all"
+            data-i18n="filter.all"
+          >
+            All
+          </button>
+          <button class="filter" data-filter="edu" data-i18n="filter.edu">
+            Islamic EdTech
+          </button>
+          <button class="filter" data-filter="system" data-i18n="filter.system">
+            Web Systems
+          </button>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card tilt reveal" data-cat="edu">
+            <div class="project-top">
+              <span class="project-tag">Edutajwid</span>
+              <span class="project-num">01</span>
+            </div>
+            <h3 data-i18n="p1.title">Interactive tajwid learning website</h3>
+            <p data-i18n="p1.desc">
+              A tajwid learning platform for children, teens, and adults
+              featuring email registration, lessons, quizzes, leaderboards,
+              classes, levels, exams, and automatic certificates.
+            </p>
+            <div class="chips" data-i18n="p1.chips">
+              <span>Quizzes</span><span>Leaderboard</span
+              ><span>Certificates</span>
+            </div>
+          </article>
+
+          <article class="project-card tilt reveal" data-cat="edu">
+            <div class="project-top">
+              <span class="project-tag" data-i18n="p2.tag"
+                >Qur'an Tracking App</span
+              >
+              <span class="project-num">02</span>
+            </div>
+            <h3 data-i18n="p2.title">Qur'an reading progress monitoring</h3>
+            <p data-i18n="p2.desc">
+              A web app that tracks reading progress for individuals and
+              institutions, with data visualization and daily or periodic input.
+            </p>
+            <div class="chips" data-i18n="p2.chips">
+              <span>Data Viz</span><span>Multi-user</span><span>Tracking</span>
+            </div>
+          </article>
+
+          <article class="project-card tilt reveal" data-cat="system">
+            <div class="project-top">
+              <span class="project-tag" data-i18n="p3.tag"
+                >Warehouse Management</span
+              >
+              <span class="project-num">03</span>
+            </div>
+            <h3 data-i18n="p3.title">Inventory management system</h3>
+            <p data-i18n="p3.desc">
+              Full-stack app for inventory, purchase orders, and automatic stock
+              validation.
+            </p>
+            <div class="chips">
+              <span>Laravel</span><span>MySQL</span><span>Next.js</span
+              ><span>TypeScript</span><span>Tailwind</span>
+            </div>
+          </article>
+
+          <article class="project-card tilt reveal" data-cat="system">
+            <div class="project-top">
+              <span class="project-tag" data-i18n="p4.tag">School Website</span>
+              <span class="project-num">04</span>
+            </div>
+            <h3 data-i18n="p4.title">Auladina Indonesia School Website</h3>
+            <p data-i18n="p4.desc">
+              Official school website with an admin dashboard for managing
+              teacher and staff data.
+            </p>
+            <div class="chips">
+              <span>PHP</span><span>CodeIgniter</span><span>MySQL</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="section contact" id="contact">
+        <div class="contact-card reveal">
+          <p class="eyebrow">
+            <span class="dot"></span>
+            <span data-i18n="contact.eyebrow">Let's collaborate</span>
+          </p>
+          <h2 data-i18n="contact.title">
+            Got a project idea<br /><span class="accent"
+              >or a Qur'an class?</span
+            >
+          </h2>
+          <p class="contact-sub" data-i18n="contact.sub">
+            I'm open to web projects, IT teaching, and tahsin &amp; tahfidz
+            programs.
+          </p>
+          <!-- Ganti email & link di bawah dengan kontak asli -->
+          <div class="contact-actions">
+            <button
+              class="btn btn-primary magnetic"
+              id="copyEmail"
+              data-email="abdillahalfath7@gmail.com"
+            >
+              <span class="copy-label" data-i18n="contact.copy"
+                >Copy Email</span
+              >
+              <span class="btn-icon">⧉</span>
+            </button>
+            <a
+              class="btn btn-ghost magnetic"
+              href="https://www.linkedin.com/in/farhanabdillahalfath"
+              target="_blank"
+              rel="noopener"
+              >LinkedIn ↗</a
+            >
+            <a
+              class="btn btn-ghost magnetic"
+              href="https://github.com/aalfath7"
+              target="_blank"
+              rel="noopener"
+              >GitHub ↗</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> Farhan Abdillah Alfath, S.T.</p>
+      <a
+        href="#home"
+        class="to-top"
+        aria-label="Back to top"
+        data-i18n-aria="aria.top"
+        >↑</a
+      >
+    </footer>
+
+    <div class="toast" id="toast" role="status"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
